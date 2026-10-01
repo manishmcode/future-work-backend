@@ -6,6 +6,7 @@ const CLASS_COLUMNS = [
     "id",
     "name",
     "url",
+    "recorded_class_link",
     "class_date",
     "end_time",
     "end_date",
@@ -37,6 +38,7 @@ export async function createClass(payload: CreateClassPayload): Promise<Class> {
     const [createdClass] = await db<Class>(CLASSES_TABLE)
         .insert({
             ...payload,
+            recorded_class_link: payload.recorded_class_link?.trim() || null,
             is_active: payload.is_active ?? true,
         })
         .returning([...CLASS_COLUMNS]);
@@ -50,6 +52,9 @@ export async function updateClass(id: number, payload: UpdateClassPayload): Prom
     };
 
     if (payload.url !== undefined) updates.url = payload.url;
+    if (payload.recorded_class_link !== undefined) {
+        updates.recorded_class_link = payload.recorded_class_link?.trim() || null;
+    }
     if (payload.name !== undefined) updates.name = payload.name;
     if (payload.class_date !== undefined) updates.class_date = payload.class_date;
     if (payload.end_time !== undefined) updates.end_time = payload.end_time;

@@ -2,6 +2,7 @@ export interface Class {
     id: number;
     name: string;
     url: string;
+    recorded_class_link: string | null;
     class_date: Date;
     end_time: string;
     end_date: Date;
@@ -17,6 +18,7 @@ export type LearnerClass = Omit<Class, "url">;
 export interface CreateClassPayload {
     name: string;
     url: string;
+    recorded_class_link?: string | null | undefined;
     class_date: Date;
     end_time: string;
     end_date: Date;
@@ -28,6 +30,7 @@ export interface CreateClassPayload {
 export interface UpdateClassPayload {
     name?: string | undefined;
     url?: string | undefined;
+    recorded_class_link?: string | null | undefined;
     class_date?: Date | undefined;
     end_time?: string | undefined;
     end_date?: Date | undefined;

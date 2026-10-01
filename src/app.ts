@@ -20,7 +20,7 @@ app.use("/learntech-api/status-change", express.raw({ type: "application/json" }
 app.use(express.json());
 
 app.get("/", (_req, res) => {
-    sendSuccess(res, "API is running", { service: "learnweb-backend" });
+    sendSuccess(res, "API is running", { service: "learntech-backend" });
 });
 
 // Compatibility endpoints for webhook URLs configured directly as root paths.

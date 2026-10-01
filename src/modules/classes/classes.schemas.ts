@@ -1,8 +1,18 @@
 import { z } from "zod";
 
+const recordedClassLinkSchema = z
+    .string()
+    .trim()
+    .max(2000, "Recorded class link must be at most 2000 characters")
+    .refine((value) => value.length === 0 || z.string().url().safeParse(value).success, {
+        message: "Recorded class link must be a valid URL",
+    })
+    .transform((value) => (value.length === 0 ? null : value));
+
 const classFieldsSchema = z.object({
     name: z.string().trim().min(1, "Class name is required").max(150, "Class name must be at most 150 characters"),
     url: z.string().url("URL must be a valid URL").max(2000, "URL must be at most 2000 characters"),
+    recorded_class_link: recordedClassLinkSchema.optional(),
     class_date: z.coerce.date(),
     end_time: z.string().regex(/^([01]\d|2[0-3]):[0-5]\d(?::[0-5]\d)?$/, "End time must be a valid time"),
     end_date: z.coerce.date(),
