@@ -1,6 +1,6 @@
 import { db } from "../config/db";
 
-const FILE_UPLOAD_URL = "https://learntechacademy.net/assets";
+const FILE_UPLOAD_URL = "https://future-workacademy.net/assets";
 const LIBRARY_TABLE = "library_items";
 
 const CATEGORY_PLAN_IDS: Record<string, number[]> = {
