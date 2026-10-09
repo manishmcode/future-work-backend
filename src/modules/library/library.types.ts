@@ -17,6 +17,7 @@ export interface LibraryCourseCard {
     title: string;
     image: string;
     link: string;
+    type: string;
     plan_ids: number[];
 }
 

@@ -9,6 +9,7 @@ import {
 
 const libraryRouter = Router();
 
+libraryRouter.use(authMiddleware);
 libraryRouter.get("/", getLibraryController);
 libraryRouter.get("/categories", getLibraryCategoriesController);
 libraryRouter.get("/items", getPaginatedLibraryItemsController);

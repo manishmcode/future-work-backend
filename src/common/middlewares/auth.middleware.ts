@@ -11,16 +11,38 @@ export interface AuthUser {
 
 export interface AuthRequest extends Request {
     authUser?: AuthUser;
+    authToken?: string;
+}
+
+function getCookieValue(cookieHeader: string | undefined, name: string): string | null {
+    if (!cookieHeader) return null;
+
+    for (const cookie of cookieHeader.split(";")) {
+        const separatorIndex = cookie.indexOf("=");
+        if (separatorIndex === -1) continue;
+
+        const cookieName = cookie.slice(0, separatorIndex).trim();
+        if (cookieName !== name) continue;
+
+        return decodeURIComponent(cookie.slice(separatorIndex + 1).trim());
+    }
+
+    return null;
 }
 
 export function authMiddleware(req: AuthRequest, res: Response, next: NextFunction): Response | void {
     const authHeader = req.headers.authorization;
+    const cookieToken = getCookieValue(req.headers.cookie, "bgp_auth_token");
 
-    if (!authHeader || !authHeader.startsWith("Bearer ")) {
+    if ((!authHeader || !authHeader.startsWith("Bearer ")) && !cookieToken) {
         return sendError(res, "Authorization token is missing", 401);
     }
 
-    const token = authHeader.slice(7);
+    const token = authHeader?.startsWith("Bearer ") ? authHeader.slice(7) : cookieToken;
+
+    if (!token) {
+        return sendError(res, "Authorization token is missing", 401);
+    }
 
     try {
         const decoded = jwt.verify(token, env.JWT_SECRET);
@@ -41,6 +63,7 @@ export function authMiddleware(req: AuthRequest, res: Response, next: NextFuncti
             email: payload.email,
             isAdmin: payload.is_admin === true,
         };
+        req.authToken = token;
         next();
     } catch (error) {
         if (error instanceof jwt.TokenExpiredError) {

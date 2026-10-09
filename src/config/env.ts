@@ -34,6 +34,9 @@ const envSchema = z.object({
     CATALYST_CURRENCY: z.string().default("EUR"),
     CATALYST_DEFAULT_COUNTRY: z.string().default("DE"),
     SUPPORT_EMAIL: z.string().optional(),
+    LIBRARY_ASSETS_ROOT: z.string().optional(),
+    LIBRARY_ASSET_TOKEN_SECRET: z.string().min(8, "LIBRARY_ASSET_TOKEN_SECRET must be at least 8 characters").optional(),
+    LIBRARY_ASSET_TOKEN_TTL_SECONDS: z.coerce.number().int().positive().default(900),
 });
 
 const parsed = envSchema.safeParse(process.env);

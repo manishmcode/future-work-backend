@@ -1,74 +1,784 @@
 {
-  "Social Media Growth Essentials": [
-    { "title": "Why You Need a Social Media Marketing Strategy", "type": "video", "category": "Social Media Growth Essentials", "content_url": "https://learnsocialai.net/assets/1/Module1/video01.mp4", "thumbnail_url": "https://learnsocialai.net/assets/1/Module1/1.webp", "plan_ids": [1], "sort_order": 0 },
-    { "title": "How to Use Social Media Marketing to Gain Followers", "type": "video", "category": "Social Media Growth Essentials", "content_url": "https://learnsocialai.net/assets/1/Module2/video02.mp4", "thumbnail_url": "https://learnsocialai.net/assets/1/Module2/2.webp", "plan_ids": [1], "sort_order": 1 },
-    { "title": "Top 6 Benefits to Social Media Marketing", "type": "video", "category": "Social Media Growth Essentials", "content_url": "https://learnsocialai.net/assets/1/Module3/video03.mp4", "thumbnail_url": "https://learnsocialai.net/assets/1/Module3/3.webp", "plan_ids": [1], "sort_order": 2 },
-    { "title": "8 Secrets to Quality Social Media Marketing", "type": "video", "category": "Social Media Growth Essentials", "content_url": "https://learnsocialai.net/assets/1/Module4/video04.mp4", "thumbnail_url": "https://learnsocialai.net/assets/1/Module4/4.webp", "plan_ids": [1], "sort_order": 3 },
-    { "title": "How to Check if Your Social Media Marketing Is Working", "type": "video", "category": "Social Media Growth Essentials", "content_url": "https://learnsocialai.net/assets/1/Module5/video05.mp4", "thumbnail_url": "https://learnsocialai.net/assets/1/Module5/5.webp", "plan_ids": [1], "sort_order": 4 },
-    { "title": "Why You Need to Increase Your Engagement, Not Your Followers", "type": "video", "category": "Social Media Growth Essentials", "content_url": "https://learnsocialai.net/assets/1/Module6/video06.mp4", "thumbnail_url": "https://learnsocialai.net/assets/1/Module6/6.webp", "plan_ids": [1], "sort_order": 5 },
-    { "title": "Easy Ways to Update Your Social Media Marketing Strategy", "type": "video", "category": "Social Media Growth Essentials", "content_url": "https://learnsocialai.net/assets/1/Module7/video07.mp4", "thumbnail_url": "https://learnsocialai.net/assets/1/Module7/7.webp", "plan_ids": [1], "sort_order": 6 },
-    { "title": "How Collaboration Can Improve Your Social Media Marketing and Gain New Followers", "type": "video", "category": "Social Media Growth Essentials", "content_url": "https://learnsocialai.net/assets/1/Module8/video08.mp4", "thumbnail_url": "https://learnsocialai.net/assets/1/Module8/8.webp", "plan_ids": [1], "sort_order": 7 },
-    { "title": "5 Quick Tips to Set Up Your Social Media Marketing", "type": "video", "category": "Social Media Growth Essentials", "content_url": "https://learnsocialai.net/assets/1/Module9/video09.mp4", "thumbnail_url": "https://learnsocialai.net/assets/1/Module9/9.webp", "plan_ids": [1], "sort_order": 8 },
-    { "title": "How to Use Social Media Marketing to Develop Your Brand", "type": "video", "category": "Social Media Growth Essentials", "content_url": "https://learnsocialai.net/assets/1/Module10/video10.mp4", "thumbnail_url": "https://learnsocialai.net/assets/1/Module10/10.webp", "plan_ids": [1], "sort_order": 9 }
+  "Online Business Blueprint": [
+    {
+      "title": "Skinacat",
+      "type": "video",
+      "category": "Online Business Blueprint",
+      "content_url": "https://businessgrowthpath.net/assets/1/1-skinacat.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/1/1-skinacat.webp",
+      "plan_ids": [
+        1,
+        3
+      ],
+      "sort_order": 0
+    },
+    {
+      "title": "History",
+      "type": "video",
+      "category": "Online Business Blueprint",
+      "content_url": "https://businessgrowthpath.net/assets/1/2-history.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/1/2-history.webp",
+      "plan_ids": [
+        1,
+        3
+      ],
+      "sort_order": 1
+    },
+    {
+      "title": "Benefits",
+      "type": "video",
+      "category": "Online Business Blueprint",
+      "content_url": "https://businessgrowthpath.net/assets/1/3-benefits.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/1/3-benefits.webp",
+      "plan_ids": [
+        1,
+        3
+      ],
+      "sort_order": 2
+    },
+    {
+      "title": "Downsides",
+      "type": "video",
+      "category": "Online Business Blueprint",
+      "content_url": "https://businessgrowthpath.net/assets/1/4-downsides.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/1/4-downsides.webp",
+      "plan_ids": [
+        1,
+        3
+      ],
+      "sort_order": 3
+    },
+    {
+      "title": "Formula",
+      "type": "video",
+      "category": "Online Business Blueprint",
+      "content_url": "https://businessgrowthpath.net/assets/1/5-formula.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/1/5-formula.webp",
+      "plan_ids": [
+        1,
+        3
+      ],
+      "sort_order": 4
+    },
+    {
+      "title": "Emailing My List",
+      "type": "video",
+      "category": "Online Business Blueprint",
+      "content_url": "https://businessgrowthpath.net/assets/1/6-emailingmylist.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/1/6-emailingmylist.webp",
+      "plan_ids": [
+        1,
+        3
+      ],
+      "sort_order": 5
+    },
+    {
+      "title": "Creating Products",
+      "type": "video",
+      "category": "Online Business Blueprint",
+      "content_url": "https://businessgrowthpath.net/assets/1/7-creatingproducts.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/1/7-creatingproducts.webp",
+      "plan_ids": [
+        1,
+        3
+      ],
+      "sort_order": 6
+    },
+    {
+      "title": "Types of Products",
+      "type": "video",
+      "category": "Online Business Blueprint",
+      "content_url": "https://businessgrowthpath.net/assets/1/8-typesproducts.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/1/8-typesproducts.webp",
+      "plan_ids": [
+        1,
+        3
+      ],
+      "sort_order": 7
+    },
+    {
+      "title": "Successful Product",
+      "type": "video",
+      "category": "Online Business Blueprint",
+      "content_url": "https://businessgrowthpath.net/assets/1/9-succesfulproduct.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/1/9-succesfulproduct.webp",
+      "plan_ids": [
+        1,
+        3
+      ],
+      "sort_order": 8
+    },
+    {
+      "title": "Using AI",
+      "type": "video",
+      "category": "Online Business Blueprint",
+      "content_url": "https://businessgrowthpath.net/assets/1/10-usingai.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/1/10-usingai.webp",
+      "plan_ids": [
+        1,
+        3
+      ],
+      "sort_order": 9
+    },
+    {
+      "title": "Mindset",
+      "type": "video",
+      "category": "Online Business Blueprint",
+      "content_url": "https://businessgrowthpath.net/assets/1/11-mindset.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/1/11-mindset.webp",
+      "plan_ids": [
+        1,
+        3
+      ],
+      "sort_order": 10
+    },
+    {
+      "title": "Time Management",
+      "type": "video",
+      "category": "Online Business Blueprint",
+      "content_url": "https://businessgrowthpath.net/assets/1/12-timemanagement.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/1/12-timemanagement.webp",
+      "plan_ids": [
+        1,
+        3
+      ],
+      "sort_order": 11
+    }
   ],
-  "Digital Marketing for Absolute Beginners": [
-    { "title": "3 Powerful Platforms for Selling Your Products", "type": "video", "category": "Digital Marketing for Absolute Beginners", "content_url": "https://learnsocialai.net/assets/2/Module1/video01.mp4", "thumbnail_url": "https://learnsocialai.net/assets/2/Module1/1.webp", "plan_ids": [1], "sort_order": 10 },
-    { "title": "5 Amazingly Powerful Tools for Internet Marketers", "type": "video", "category": "Digital Marketing for Absolute Beginners", "content_url": "https://learnsocialai.net/assets/2/Module2/video02.mp4", "thumbnail_url": "https://learnsocialai.net/assets/2/Module2/2.webp", "plan_ids": [1], "sort_order": 11 },
-    { "title": "5 Essential Skills You Should Develop as an Internet Marketer", "type": "video", "category": "Digital Marketing for Absolute Beginners", "content_url": "https://learnsocialai.net/assets/2/Module3/video03.mp4", "thumbnail_url": "https://learnsocialai.net/assets/2/Module3/3.webp", "plan_ids": [1], "sort_order": 12 },
-    { "title": "5 Secrets of Successful Affiliate Marketers", "type": "video", "category": "Digital Marketing for Absolute Beginners", "content_url": "https://learnsocialai.net/assets/2/Module4/video04.mp4", "thumbnail_url": "https://learnsocialai.net/assets/2/Module4/4.webp", "plan_ids": [1], "sort_order": 13 },
-    { "title": "5 Ways You Can Make Money Online", "type": "video", "category": "Digital Marketing for Absolute Beginners", "content_url": "https://learnsocialai.net/assets/2/Module5/video05.mp4", "thumbnail_url": "https://learnsocialai.net/assets/2/Module5/5.webp", "plan_ids": [1], "sort_order": 14 },
-    { "title": "How to Become a Thought Leader", "type": "video", "category": "Digital Marketing for Absolute Beginners", "content_url": "https://learnsocialai.net/assets/2/Module6/video06.mp4", "thumbnail_url": "https://learnsocialai.net/assets/2/Module6/6.webp", "plan_ids": [1], "sort_order": 15 },
-    { "title": "How to Get Started With Email Marketing", "type": "video", "category": "Digital Marketing for Absolute Beginners", "content_url": "https://learnsocialai.net/assets/2/Module7/video07.mp4", "thumbnail_url": "https://learnsocialai.net/assets/2/Module7/7.webp", "plan_ids": [1], "sort_order": 16 },
-    { "title": "How to Get Traffic to Your Website From Social Media Platforms", "type": "video", "category": "Digital Marketing for Absolute Beginners", "content_url": "https://learnsocialai.net/assets/2/Module8/video08.mp4", "thumbnail_url": "https://learnsocialai.net/assets/2/Module8/8.webp", "plan_ids": [1], "sort_order": 17 },
-    { "title": "Top 5 Mistakes That New Internet Marketers Make", "type": "video", "category": "Digital Marketing for Absolute Beginners", "content_url": "https://learnsocialai.net/assets/2/Module9/video09.mp4", "thumbnail_url": "https://learnsocialai.net/assets/2/Module9/9.webp", "plan_ids": [1], "sort_order": 18 },
-    { "title": "Top 5 Myths Surrounding Internet Marketing", "type": "video", "category": "Digital Marketing for Absolute Beginners", "content_url": "https://learnsocialai.net/assets/2/Module10/video10.mp4", "thumbnail_url": "https://learnsocialai.net/assets/2/Module10/10.webp", "plan_ids": [1], "sort_order": 19 }
+  "Online Business Systemization": [
+    {
+      "title": "Chapter 1",
+      "type": "video",
+      "category": "Online Business Systemization",
+      "content_url": "https://businessgrowthpath.net/assets/2/video01.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/2/video01.webp",
+      "plan_ids": [
+        1,
+        3
+      ],
+      "sort_order": 12
+    },
+    {
+      "title": "Chapter 2",
+      "type": "video",
+      "category": "Online Business Systemization",
+      "content_url": "https://businessgrowthpath.net/assets/2/video02.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/2/video02.webp",
+      "plan_ids": [
+        1,
+        3
+      ],
+      "sort_order": 13
+    },
+    {
+      "title": "Chapter 3",
+      "type": "video",
+      "category": "Online Business Systemization",
+      "content_url": "https://businessgrowthpath.net/assets/2/video03.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/2/video03.webp",
+      "plan_ids": [
+        1,
+        3
+      ],
+      "sort_order": 14
+    },
+    {
+      "title": "Chapter 4",
+      "type": "video",
+      "category": "Online Business Systemization",
+      "content_url": "https://businessgrowthpath.net/assets/2/Video04.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/2/Video04.webp",
+      "plan_ids": [
+        1,
+        3
+      ],
+      "sort_order": 15
+    },
+    {
+      "title": "Chapter 5",
+      "type": "video",
+      "category": "Online Business Systemization",
+      "content_url": "https://businessgrowthpath.net/assets/2/Video05.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/2/Video05.webp",
+      "plan_ids": [
+        1,
+        3
+      ],
+      "sort_order": 16
+    },
+    {
+      "title": "Chapter 6",
+      "type": "video",
+      "category": "Online Business Systemization",
+      "content_url": "https://businessgrowthpath.net/assets/2/Video06.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/2/Video06.webp",
+      "plan_ids": [
+        1,
+        3
+      ],
+      "sort_order": 17
+    },
+    {
+      "title": "Chapter 7",
+      "type": "video",
+      "category": "Online Business Systemization",
+      "content_url": "https://businessgrowthpath.net/assets/2/Video07.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/2/Video07.webp",
+      "plan_ids": [
+        1,
+        3
+      ],
+      "sort_order": 18
+    },
+    {
+      "title": "Chapter 8",
+      "type": "video",
+      "category": "Online Business Systemization",
+      "content_url": "https://businessgrowthpath.net/assets/2/Video08.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/2/Video08.webp",
+      "plan_ids": [
+        1,
+        3
+      ],
+      "sort_order": 19
+    },
+    {
+      "title": "Chapter 9",
+      "type": "video",
+      "category": "Online Business Systemization",
+      "content_url": "https://businessgrowthpath.net/assets/2/Video09.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/2/Video09.webp",
+      "plan_ids": [
+        1,
+        3
+      ],
+      "sort_order": 20
+    },
+    {
+      "title": "Chapter 10",
+      "type": "video",
+      "category": "Online Business Systemization",
+      "content_url": "https://businessgrowthpath.net/assets/2/Video10.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/2/Video10.webp",
+      "plan_ids": [
+        1,
+        3
+      ],
+      "sort_order": 21
+    }
   ],
-  "The Social Media Strategy Blueprint": [
-    { "title": "What Social Media Marketing Is and What It Isn't", "type": "video", "category": "The Social Media Strategy Blueprint", "content_url": "https://learnsocialai.net/assets/3/Module1/Video%201.mp4", "thumbnail_url": "https://learnsocialai.net/assets/3/Module1/1.webp", "plan_ids": [1], "sort_order": 20 },
-    { "title": "8 Reasons Why You Need to Do Social Media Marketing", "type": "video", "category": "The Social Media Strategy Blueprint", "content_url": "https://learnsocialai.net/assets/3/Module2/Video%202.mp4", "thumbnail_url": "https://learnsocialai.net/assets/3/Module2/2.webp", "plan_ids": [1], "sort_order": 21 },
-    { "title": "Modify Your Social Media Marketing Campaign for Your Business Type", "type": "video", "category": "The Social Media Strategy Blueprint", "content_url": "https://learnsocialai.net/assets/3/Module3/Video%203.mp4", "thumbnail_url": "https://learnsocialai.net/assets/3/Module3/3.webp", "plan_ids": [1], "sort_order": 22 },
-    { "title": "The Classic Way to Do Social Media Marketing and Why It Is a Waste of Time", "type": "video", "category": "The Social Media Strategy Blueprint", "content_url": "https://learnsocialai.net/assets/3/Module4/Video%204.mp4", "thumbnail_url": "https://learnsocialai.net/assets/3/Module4/4.webp", "plan_ids": [1], "sort_order": 23 },
-    { "title": "10 Steps to Faster and Easier Modern Social Media Marketing", "type": "video", "category": "The Social Media Strategy Blueprint", "content_url": "https://learnsocialai.net/assets/3/Module5/Video%205.mp4", "thumbnail_url": "https://learnsocialai.net/assets/3/Module5/5.webp", "plan_ids": [1], "sort_order": 24 },
-    { "title": "How to Do Niche Research and Targeting the Right Way", "type": "video", "category": "The Social Media Strategy Blueprint", "content_url": "https://learnsocialai.net/assets/3/Module6/Video%206.mp4", "thumbnail_url": "https://learnsocialai.net/assets/3/Module6/6.webp", "plan_ids": [1], "sort_order": 25 },
-    { "title": "Content Curation: Your Secret Social Media Marketing Weapon", "type": "video", "category": "The Social Media Strategy Blueprint", "content_url": "https://learnsocialai.net/assets/3/Module7/Video%207.mp4", "thumbnail_url": "https://learnsocialai.net/assets/3/Module7/7.webp", "plan_ids": [1], "sort_order": 26 },
-    { "title": "Reverse Engineer Your Competitors' Top Content", "type": "video", "category": "The Social Media Strategy Blueprint", "content_url": "https://learnsocialai.net/assets/3/Module8/Video%208.mp4", "thumbnail_url": "https://learnsocialai.net/assets/3/Module8/8.webp", "plan_ids": [1], "sort_order": 27 },
-    { "title": "Fine Tune Your Payload Content", "type": "video", "category": "The Social Media Strategy Blueprint", "content_url": "https://learnsocialai.net/assets/3/Module9/Video%209.mp4", "thumbnail_url": "https://learnsocialai.net/assets/3/Module9/9.webp", "plan_ids": [1], "sort_order": 28 },
-    { "title": "Market Your List Right", "type": "video", "category": "The Social Media Strategy Blueprint", "content_url": "https://learnsocialai.net/assets/3/Module10/Video%2010.mp4", "thumbnail_url": "https://learnsocialai.net/assets/3/Module10/10.webp", "plan_ids": [1], "sort_order": 29 }
+  "Boost Online Sales": [
+    {
+      "title": "Chapter 1",
+      "type": "video",
+      "category": "Boost Online Sales",
+      "content_url": "https://businessgrowthpath.net/assets/3/video01.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/3/video01.webp",
+      "plan_ids": [
+        1,
+        3
+      ],
+      "sort_order": 22
+    },
+    {
+      "title": "Chapter 2",
+      "type": "video",
+      "category": "Boost Online Sales",
+      "content_url": "https://businessgrowthpath.net/assets/3/video02.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/3/video02.webp",
+      "plan_ids": [
+        1,
+        3
+      ],
+      "sort_order": 23
+    },
+    {
+      "title": "Chapter 3",
+      "type": "video",
+      "category": "Boost Online Sales",
+      "content_url": "https://businessgrowthpath.net/assets/3/video03.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/3/video03.webp",
+      "plan_ids": [
+        1,
+        3
+      ],
+      "sort_order": 24
+    },
+    {
+      "title": "Chapter 4",
+      "type": "video",
+      "category": "Boost Online Sales",
+      "content_url": "https://businessgrowthpath.net/assets/3/video04.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/3/video04.webp",
+      "plan_ids": [
+        1,
+        3
+      ],
+      "sort_order": 25
+    },
+    {
+      "title": "Chapter 5",
+      "type": "video",
+      "category": "Boost Online Sales",
+      "content_url": "https://businessgrowthpath.net/assets/3/video05.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/3/video05.webp",
+      "plan_ids": [
+        1,
+        3
+      ],
+      "sort_order": 26
+    },
+    {
+      "title": "Chapter 6",
+      "type": "video",
+      "category": "Boost Online Sales",
+      "content_url": "https://businessgrowthpath.net/assets/3/video06.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/3/video06.webp",
+      "plan_ids": [
+        1,
+        3
+      ],
+      "sort_order": 27
+    },
+    {
+      "title": "Chapter 7",
+      "type": "video",
+      "category": "Boost Online Sales",
+      "content_url": "https://businessgrowthpath.net/assets/3/video07.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/3/video07.webp",
+      "plan_ids": [
+        1,
+        3
+      ],
+      "sort_order": 28
+    },
+    {
+      "title": "Chapter 8",
+      "type": "video",
+      "category": "Boost Online Sales",
+      "content_url": "https://businessgrowthpath.net/assets/3/video08.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/3/video08.webp",
+      "plan_ids": [
+        1,
+        3
+      ],
+      "sort_order": 29
+    },
+    {
+      "title": "Chapter 9",
+      "type": "video",
+      "category": "Boost Online Sales",
+      "content_url": "https://businessgrowthpath.net/assets/3/video09.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/3/video09.webp",
+      "plan_ids": [
+        1,
+        3
+      ],
+      "sort_order": 30
+    },
+    {
+      "title": "Chapter 10",
+      "type": "video",
+      "category": "Boost Online Sales",
+      "content_url": "https://businessgrowthpath.net/assets/3/video10.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/3/video10.webp",
+      "plan_ids": [
+        1,
+        3
+      ],
+      "sort_order": 31
+    }
   ],
-  "Instagram Growth & Marketing Masterclass": [
-    { "title": "Instagram Marketing Basics", "type": "video", "category": "Instagram Growth & Marketing Masterclass", "content_url": "https://learnsocialai.net/assets/4/Module1/Video%201.mp4", "thumbnail_url": "https://learnsocialai.net/assets/4/Module1/1.webp", "plan_ids": [1], "sort_order": 30 },
-    { "title": "Using Instagram for Business", "type": "video", "category": "Instagram Growth & Marketing Masterclass", "content_url": "https://learnsocialai.net/assets/4/Module2/Video%202.mp4", "thumbnail_url": "https://learnsocialai.net/assets/4/Module2/2.webp", "plan_ids": [1], "sort_order": 31 },
-    { "title": "Instagram Marketing Opportunities", "type": "video", "category": "Instagram Growth & Marketing Masterclass", "content_url": "https://learnsocialai.net/assets/4/Module3/Video%203.mp4", "thumbnail_url": "https://learnsocialai.net/assets/4/Module3/3.webp", "plan_ids": [1], "sort_order": 32 },
-    { "title": "Setting Up Your Instagram Account", "type": "video", "category": "Instagram Growth & Marketing Masterclass", "content_url": "https://learnsocialai.net/assets/4/Module4/Video%204.mp4", "thumbnail_url": "https://learnsocialai.net/assets/4/Module4/4.webp", "plan_ids": [1], "sort_order": 33 },
-    { "title": "Marketing on Instagram Step by Step", "type": "video", "category": "Instagram Growth & Marketing Masterclass", "content_url": "https://learnsocialai.net/assets/4/Module5/Video%205.mp4", "thumbnail_url": "https://learnsocialai.net/assets/4/Module5/5.webp", "plan_ids": [1], "sort_order": 34 },
-    { "title": "Creating Effective Instagram Posts", "type": "video", "category": "Instagram Growth & Marketing Masterclass", "content_url": "https://learnsocialai.net/assets/4/Module6/Video%206.mp4", "thumbnail_url": "https://learnsocialai.net/assets/4/Module6/6.webp", "plan_ids": [1], "sort_order": 35 },
-    { "title": "Growing Engagement on Instagram", "type": "video", "category": "Instagram Growth & Marketing Masterclass", "content_url": "https://learnsocialai.net/assets/4/Module7/Video%207.mp4", "thumbnail_url": "https://learnsocialai.net/assets/4/Module7/7.webp", "plan_ids": [1], "sort_order": 36 },
-    { "title": "Using Instagram Stories", "type": "video", "category": "Instagram Growth & Marketing Masterclass", "content_url": "https://learnsocialai.net/assets/4/Module8/Video%208.mp4", "thumbnail_url": "https://learnsocialai.net/assets/4/Module8/8.webp", "plan_ids": [1], "sort_order": 37 },
-    { "title": "Instagram for Business", "type": "video", "category": "Instagram Growth & Marketing Masterclass", "content_url": "https://learnsocialai.net/assets/4/Module9/Video%209.mp4", "thumbnail_url": "https://learnsocialai.net/assets/4/Module9/9.webp", "plan_ids": [1], "sort_order": 38 },
-    { "title": "Instagram Video Marketing", "type": "video", "category": "Instagram Growth & Marketing Masterclass", "content_url": "https://learnsocialai.net/assets/4/Module10/Video%2010.mp4", "thumbnail_url": "https://learnsocialai.net/assets/4/Module10/10.webp", "plan_ids": [1], "sort_order": 39 }
+  "Launch a Successful Business": [
+    {
+      "title": "Chapter 1",
+      "type": "video",
+      "category": "Launch a Successful Business",
+      "content_url": "https://businessgrowthpath.net/assets/4/video01.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/4/video01.webp",
+      "plan_ids": [
+        2
+      ],
+      "sort_order": 32
+    },
+    {
+      "title": "Chapter 2",
+      "type": "video",
+      "category": "Launch a Successful Business",
+      "content_url": "https://businessgrowthpath.net/assets/4/video02.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/4/video02.webp",
+      "plan_ids": [
+        2
+      ],
+      "sort_order": 33
+    },
+    {
+      "title": "Chapter 3",
+      "type": "video",
+      "category": "Launch a Successful Business",
+      "content_url": "https://businessgrowthpath.net/assets/4/video03.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/4/video03.webp",
+      "plan_ids": [
+        2
+      ],
+      "sort_order": 34
+    },
+    {
+      "title": "Chapter 4",
+      "type": "video",
+      "category": "Launch a Successful Business",
+      "content_url": "https://businessgrowthpath.net/assets/4/video04.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/4/video04.webp",
+      "plan_ids": [
+        2
+      ],
+      "sort_order": 35
+    },
+    {
+      "title": "Chapter 5",
+      "type": "video",
+      "category": "Launch a Successful Business",
+      "content_url": "https://businessgrowthpath.net/assets/4/video05.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/4/video05.webp",
+      "plan_ids": [
+        2
+      ],
+      "sort_order": 36
+    },
+    {
+      "title": "Chapter 6",
+      "type": "video",
+      "category": "Launch a Successful Business",
+      "content_url": "https://businessgrowthpath.net/assets/4/video06.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/4/video06.webp",
+      "plan_ids": [
+        2
+      ],
+      "sort_order": 37
+    },
+    {
+      "title": "Chapter 7",
+      "type": "video",
+      "category": "Launch a Successful Business",
+      "content_url": "https://businessgrowthpath.net/assets/4/video07.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/4/video07.webp",
+      "plan_ids": [
+        2
+      ],
+      "sort_order": 38
+    },
+    {
+      "title": "Chapter 8",
+      "type": "video",
+      "category": "Launch a Successful Business",
+      "content_url": "https://businessgrowthpath.net/assets/4/video08.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/4/video08.webp",
+      "plan_ids": [
+        2
+      ],
+      "sort_order": 39
+    },
+    {
+      "title": "Chapter 9",
+      "type": "video",
+      "category": "Launch a Successful Business",
+      "content_url": "https://businessgrowthpath.net/assets/4/video09.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/4/video09.webp",
+      "plan_ids": [
+        2
+      ],
+      "sort_order": 40
+    },
+    {
+      "title": "Chapter 10",
+      "type": "video",
+      "category": "Launch a Successful Business",
+      "content_url": "https://businessgrowthpath.net/assets/4/video10.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/4/video10.webp",
+      "plan_ids": [
+        2
+      ],
+      "sort_order": 41
+    }
   ],
-  "Social Media Visual Design": [
-    { "title": "Introduction to the Course", "type": "video", "category": "Social Media Visual Design", "content_url": "https://learnsocialai.net/assets/5/Module1/Lecture%201%20-%20%20Introduction%20To%20The%20Course.mp4", "thumbnail_url": "https://learnsocialai.net/assets/5/Module1/1.webp", "plan_ids": [1], "sort_order": 40 },
-    { "title": "The Structure of the Course", "type": "video", "category": "Social Media Visual Design", "content_url": "https://learnsocialai.net/assets/5/Module2/Lecture%202%20-%20The%20Structure%20Of%20The%20Course.mp4", "thumbnail_url": "https://learnsocialai.net/assets/5/Module2/2.webp", "plan_ids": [1], "sort_order": 41 },
-    { "title": "Social Media Image Maker", "type": "video", "category": "Social Media Visual Design", "content_url": "https://learnsocialai.net/assets/5/Module3/Lecture%203%20-%20Social%20Media%20Image%20Maker.mp4", "thumbnail_url": "https://learnsocialai.net/assets/5/Module3/3.webp", "plan_ids": [1], "sort_order": 42 },
-    { "title": "Social Images Resizer", "type": "video", "category": "Social Media Visual Design", "content_url": "https://learnsocialai.net/assets/5/Module4/Lecture%204%20-%20Social%20Images%20Resizer.mp4", "thumbnail_url": "https://learnsocialai.net/assets/5/Module4/4.webp", "plan_ids": [1], "sort_order": 43 },
-    { "title": "How to Use BeFunky", "type": "video", "category": "Social Media Visual Design", "content_url": "https://learnsocialai.net/assets/5/Module5/Lecture%205%20-%20How%20To%20Use%20Befunky.mp4", "thumbnail_url": "https://learnsocialai.net/assets/5/Module5/5.webp", "plan_ids": [1], "sort_order": 44 },
-    { "title": "Creating Collages", "type": "video", "category": "Social Media Visual Design", "content_url": "https://learnsocialai.net/assets/5/Module6/Lecture%206%20-%20Creating%20Collages.mp4", "thumbnail_url": "https://learnsocialai.net/assets/5/Module6/6.webp", "plan_ids": [1], "sort_order": 45 },
-    { "title": "Skyrocket Your Engagement With BeFunky Designer", "type": "video", "category": "Social Media Visual Design", "content_url": "https://learnsocialai.net/assets/5/Module7/Lecture%207%20-%20Skyrocket%20your%20engagement%20with%20Befunky%20Designer.mp4", "thumbnail_url": "https://learnsocialai.net/assets/5/Module7/7.webp", "plan_ids": [1], "sort_order": 46 },
-    { "title": "Using Canva, the Most Efficient Tool", "type": "video", "category": "Social Media Visual Design", "content_url": "https://learnsocialai.net/assets/5/Module8/Lecture%208%20-%20Using%20Canva,%20the%20most%20efficient%20tool.mp4", "thumbnail_url": "https://learnsocialai.net/assets/5/Module8/8.webp", "plan_ids": [1], "sort_order": 47 },
-    { "title": "Snappa.io: Proven Templates", "type": "video", "category": "Social Media Visual Design", "content_url": "https://learnsocialai.net/assets/5/Module9/Lecture%20%209%20-Sanppa.io%20-%20Proven%20Templates.mp4", "thumbnail_url": "https://learnsocialai.net/assets/5/Module9/9.webp", "plan_ids": [1], "sort_order": 48 },
-    { "title": "Relay: Graphics That Design Themselves", "type": "video", "category": "Social Media Visual Design", "content_url": "https://learnsocialai.net/assets/5/Module10/Lecture%2010%20-%20Relay.mp4", "thumbnail_url": "https://learnsocialai.net/assets/5/Module10/10.webp", "plan_ids": [1], "sort_order": 49 }
+  "Evergreen Lead Business": [
+    {
+      "title": "How To Create A Landing Page",
+      "type": "video",
+      "category": "Evergreen Lead Business",
+      "content_url": "https://businessgrowthpath.net/assets/5/1-0%20How%20To%20Create%20A%20Landing%20Page.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/5/1-0%20How%20To%20Create%20A%20Landing%20Page.webp",
+      "plan_ids": [
+        2
+      ],
+      "sort_order": 42
+    },
+    {
+      "title": "How To Create A Landing Page (with OptimizePress 2.0)",
+      "type": "video",
+      "category": "Evergreen Lead Business",
+      "content_url": "https://businessgrowthpath.net/assets/5/2-0%20How%20To%20Create%20A%20Landing%20Page%20(with%20OptimizePress%202.0).mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/5/2-0%20How%20To%20Create%20A%20Landing%20Page%20(with%20OptimizePress%202.0).webp",
+      "plan_ids": [
+        2
+      ],
+      "sort_order": 43
+    },
+    {
+      "title": "How To Create A FREE Offer",
+      "type": "video",
+      "category": "Evergreen Lead Business",
+      "content_url": "https://businessgrowthpath.net/assets/5/3-0%20How%20To%20Create%20A%20FREE%20Offer.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/5/3-0%20How%20To%20Create%20A%20FREE%20Offer.webp",
+      "plan_ids": [
+        2
+      ],
+      "sort_order": 44
+    },
+    {
+      "title": "How To Create A FREE Offer (PDF Book)",
+      "type": "video",
+      "category": "Evergreen Lead Business",
+      "content_url": "https://businessgrowthpath.net/assets/5/4-0%20How%20To%20Create%20A%20FREE%20Offer%20(PDF%20Book).mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/5/4-0%20How%20To%20Create%20A%20FREE%20Offer%20(PDF%20Book).webp",
+      "plan_ids": [
+        2
+      ],
+      "sort_order": 45
+    },
+    {
+      "title": "Marketing Copy In 4 Easy Steps",
+      "type": "video",
+      "category": "Evergreen Lead Business",
+      "content_url": "https://businessgrowthpath.net/assets/5/5-0%20Marketing%20Copy%20In%204%20Easy%20Steps.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/5/5-0%20Marketing%20Copy%20In%204%20Easy%20Steps.webp",
+      "plan_ids": [
+        2
+      ],
+      "sort_order": 46
+    },
+    {
+      "title": "How To Write Your Follow-Up Email Series",
+      "type": "video",
+      "category": "Evergreen Lead Business",
+      "content_url": "https://businessgrowthpath.net/assets/5/6-0%20How%20To%20Write%20Your%20Follow-Up%20Email%20Series.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/5/6-0%20How%20To%20Write%20Your%20Follow-Up%20Email%20Series.webp",
+      "plan_ids": [
+        2
+      ],
+      "sort_order": 47
+    },
+    {
+      "title": "How To Write Your Follow-Up Email Series (Aweber)",
+      "type": "video",
+      "category": "Evergreen Lead Business",
+      "content_url": "https://businessgrowthpath.net/assets/5/7-0%20How%20To%20Write%20Your%20Follow-Up%20Email%20Series%20(Aweber).mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/5/7-0%20How%20To%20Write%20Your%20Follow-Up%20Email%20Series%20(Aweber).webp",
+      "plan_ids": [
+        2
+      ],
+      "sort_order": 48
+    },
+    {
+      "title": "How To Follow-Up With Prospects",
+      "type": "video",
+      "category": "Evergreen Lead Business",
+      "content_url": "https://businessgrowthpath.net/assets/5/8-0%20How%20To%20Follow-Up%20With%20Prospects.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/5/8-0%20How%20To%20Follow-Up%20With%20Prospects.webp",
+      "plan_ids": [
+        2
+      ],
+      "sort_order": 49
+    },
+    {
+      "title": "FB Ads - How To Create Business Account",
+      "type": "video",
+      "category": "Evergreen Lead Business",
+      "content_url": "https://businessgrowthpath.net/assets/5/9-0%20FB%20Ads%20-%20How%20To%20Create%20Business%20Account.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/5/9-0%20FB%20Ads%20-%20How%20To%20Create%20Business%20Account.webp",
+      "plan_ids": [
+        2
+      ],
+      "sort_order": 50
+    },
+    {
+      "title": "FB Ads - How To Create Fan Page",
+      "type": "video",
+      "category": "Evergreen Lead Business",
+      "content_url": "https://businessgrowthpath.net/assets/5/10-0%20FB%20Ads%20-%20How%20To%20Create%20Fan%20Page.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/5/10-0%20FB%20Ads%20-%20How%20To%20Create%20Fan%20Page.webp",
+      "plan_ids": [
+        2
+      ],
+      "sort_order": 51
+    },
+    {
+      "title": "FB Ads - How To Post Ads",
+      "type": "video",
+      "category": "Evergreen Lead Business",
+      "content_url": "https://businessgrowthpath.net/assets/5/11-0%20FB%20Ads%20-%20How%20To%20Post%20Ads.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/5/11-0%20FB%20Ads%20-%20How%20To%20Post%20Ads.webp",
+      "plan_ids": [
+        2
+      ],
+      "sort_order": 52
+    },
+    {
+      "title": "Guide To On-Page Search Engine Optimization",
+      "type": "video",
+      "category": "Evergreen Lead Business",
+      "content_url": "https://businessgrowthpath.net/assets/5/12-0%20Guide%20To%20On-Page%20Search%20Engine%20Optimization.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/5/12-0%20Guide%20To%20On-Page%20Search%20Engine%20Optimization.webp",
+      "plan_ids": [
+        2
+      ],
+      "sort_order": 53
+    },
+    {
+      "title": "Guide To Off-Page Search Engine Optimization",
+      "type": "video",
+      "category": "Evergreen Lead Business",
+      "content_url": "https://businessgrowthpath.net/assets/5/13-0%20Guide%20To%20Off-Page%20Search%20Engine%20Optimization.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/5/13-0%20Guide%20To%20Off-Page%20Search%20Engine%20Optimization.webp",
+      "plan_ids": [
+        2
+      ],
+      "sort_order": 54
+    },
+    {
+      "title": "Instagram",
+      "type": "video",
+      "category": "Evergreen Lead Business",
+      "content_url": "https://businessgrowthpath.net/assets/5/14-0%20%20Instagram.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/5/14-0%20%20Instagram.webp",
+      "plan_ids": [
+        2
+      ],
+      "sort_order": 55
+    },
+    {
+      "title": "Reddit",
+      "type": "video",
+      "category": "Evergreen Lead Business",
+      "content_url": "https://businessgrowthpath.net/assets/5/15-0%20Reddit.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/5/15-0%20Reddit.webp",
+      "plan_ids": [
+        2
+      ],
+      "sort_order": 56
+    }
   ],
-  "Social Influence & Personal Branding": [
-    { "title": "3 Ways to Use Google Plus for Better Search Engine Rankings", "type": "video", "category": "Social Influence & Personal Branding", "content_url": "https://learnsocialai.net/assets/6/Module1/video01.mp4", "thumbnail_url": "https://learnsocialai.net/assets/6/Module1/1.webp", "plan_ids": [1], "sort_order": 50 },
-    { "title": "5 Keys to an Effective Instagram Marketing Campaign", "type": "video", "category": "Social Influence & Personal Branding", "content_url": "https://learnsocialai.net/assets/6/Module2/video02.mp4", "thumbnail_url": "https://learnsocialai.net/assets/6/Module2/2.webp", "plan_ids": [1], "sort_order": 51 },
-    { "title": "Advanced Social Media Marketing Tactics to Get a Ton of Followers", "type": "video", "category": "Social Influence & Personal Branding", "content_url": "https://learnsocialai.net/assets/6/Module3/video03.mp4", "thumbnail_url": "https://learnsocialai.net/assets/6/Module3/3.webp", "plan_ids": [1], "sort_order": 52 },
-    { "title": "How to Set Up Your First Facebook Live Stream", "type": "video", "category": "Social Influence & Personal Branding", "content_url": "https://learnsocialai.net/assets/6/Module4/video04.mp4", "thumbnail_url": "https://learnsocialai.net/assets/6/Module4/4.webp", "plan_ids": [1], "sort_order": 53 },
-    { "title": "Personal Branding in the Modern Day of Social Media", "type": "video", "category": "Social Influence & Personal Branding", "content_url": "https://learnsocialai.net/assets/6/Module5/video05.mp4", "thumbnail_url": "https://learnsocialai.net/assets/6/Module5/5.webp", "plan_ids": [1], "sort_order": 54 },
-    { "title": "Quickest Ways to Piggyback off of Instagram Influencers", "type": "video", "category": "Social Influence & Personal Branding", "content_url": "https://learnsocialai.net/assets/6/Module6/video06.mp4", "thumbnail_url": "https://learnsocialai.net/assets/6/Module6/6.webp", "plan_ids": [1], "sort_order": 55 },
-    { "title": "Tips to Creating Headlines That Will Click With Your Audience", "type": "video", "category": "Social Influence & Personal Branding", "content_url": "https://learnsocialai.net/assets/6/Module7/video07.mp4", "thumbnail_url": "https://learnsocialai.net/assets/6/Module7/7.webp", "plan_ids": [1], "sort_order": 56 },
-    { "title": "Top 5 Advantages to Marketing Through Social Media", "type": "video", "category": "Social Influence & Personal Branding", "content_url": "https://learnsocialai.net/assets/6/Module8/video08.mp4", "thumbnail_url": "https://learnsocialai.net/assets/6/Module8/8.webp", "plan_ids": [1], "sort_order": 57 },
-    { "title": "Top 5 Facebook Marketing Mistakes You Need to Avoid", "type": "video", "category": "Social Influence & Personal Branding", "content_url": "https://learnsocialai.net/assets/6/Module9/video09.mp4", "thumbnail_url": "https://learnsocialai.net/assets/6/Module9/9.webp", "plan_ids": [1], "sort_order": 58 },
-    { "title": "Where to Find Free Graphics and Images for Your Social Posts", "type": "video", "category": "Social Influence & Personal Branding", "content_url": "https://learnsocialai.net/assets/6/Module10/video10.mp4", "thumbnail_url": "https://learnsocialai.net/assets/6/Module10/10.webp", "plan_ids": [1], "sort_order": 59 }
+  "Internet Marketing Strategy": [
+    {
+      "title": "Chapter 1",
+      "type": "video",
+      "category": "Internet Marketing Strategy",
+      "content_url": "https://businessgrowthpath.net/assets/6/Video%201.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/6/Video%201.webp",
+      "plan_ids": [
+        2
+      ],
+      "sort_order": 57
+    },
+    {
+      "title": "Chapter 2",
+      "type": "video",
+      "category": "Internet Marketing Strategy",
+      "content_url": "https://businessgrowthpath.net/assets/6/Video%202.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/6/Video%202.webp",
+      "plan_ids": [
+        2
+      ],
+      "sort_order": 58
+    },
+    {
+      "title": "Chapter 3",
+      "type": "video",
+      "category": "Internet Marketing Strategy",
+      "content_url": "https://businessgrowthpath.net/assets/6/Video%203.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/6/Video%203.webp",
+      "plan_ids": [
+        2
+      ],
+      "sort_order": 59
+    },
+    {
+      "title": "Chapter 4",
+      "type": "video",
+      "category": "Internet Marketing Strategy",
+      "content_url": "https://businessgrowthpath.net/assets/6/Video%204.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/6/Video%204.webp",
+      "plan_ids": [
+        2
+      ],
+      "sort_order": 60
+    },
+    {
+      "title": "Chapter 5",
+      "type": "video",
+      "category": "Internet Marketing Strategy",
+      "content_url": "https://businessgrowthpath.net/assets/6/Video%205.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/6/Video%205.webp",
+      "plan_ids": [
+        2
+      ],
+      "sort_order": 61
+    },
+    {
+      "title": "Chapter 6",
+      "type": "video",
+      "category": "Internet Marketing Strategy",
+      "content_url": "https://businessgrowthpath.net/assets/6/Video%206.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/6/Video%206.webp",
+      "plan_ids": [
+        2
+      ],
+      "sort_order": 62
+    },
+    {
+      "title": "Chapter 7",
+      "type": "video",
+      "category": "Internet Marketing Strategy",
+      "content_url": "https://businessgrowthpath.net/assets/6/Video%207.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/6/Video%207.webp",
+      "plan_ids": [
+        2
+      ],
+      "sort_order": 63
+    },
+    {
+      "title": "Chapter 8",
+      "type": "video",
+      "category": "Internet Marketing Strategy",
+      "content_url": "https://businessgrowthpath.net/assets/6/Video%208.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/6/Video%208.webp",
+      "plan_ids": [
+        2
+      ],
+      "sort_order": 64
+    },
+    {
+      "title": "Chapter 9",
+      "type": "video",
+      "category": "Internet Marketing Strategy",
+      "content_url": "https://businessgrowthpath.net/assets/6/Video%209.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/6/Video%209.webp",
+      "plan_ids": [
+        2
+      ],
+      "sort_order": 65
+    },
+    {
+      "title": "Chapter 10",
+      "type": "video",
+      "category": "Internet Marketing Strategy",
+      "content_url": "https://businessgrowthpath.net/assets/6/Video%2010.mp4",
+      "thumbnail_url": "https://businessgrowthpath.net/assets/6/Video%2010.webp",
+      "plan_ids": [
+        2
+      ],
+      "sort_order": 66
+    }
   ]
 }
+

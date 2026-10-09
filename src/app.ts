@@ -1,8 +1,10 @@
 import cors from "cors";
 import express from "express";
 import { errorMiddleware } from "./common/middlewares/error.middleware";
+import { authMiddleware } from "./common/middlewares/auth.middleware";
 import { notFoundMiddleware } from "./common/middlewares/not-found.middleware";
 import { sendSuccess } from "./common/utils/api-response";
+import { getSignedLibraryAssetController } from "./modules/library/library.controller";
 import { router } from "./routes";
 
 
@@ -20,9 +22,14 @@ app.use("/future-work-api/status-change", express.raw({ type: "application/json"
 app.use(express.json());
 
 app.get("/", (_req, res) => {
-    sendSuccess(res, "API is running", { service: "future-work-backend" });
+    sendSuccess(res, "API is running", { service: "bussiness-growth-backend" });
 });
 
+app.get(
+    ["/v/:token", "/future-work-api/v/:token"],
+    authMiddleware,
+    getSignedLibraryAssetController
+);
 // Compatibility endpoints for webhook URLs configured directly as root paths.
 
 app.use("/future-work-api", router);

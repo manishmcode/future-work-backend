@@ -1,3 +1,5 @@
 .env
 node_modules
 dist
+library_data
+library_items.json

@@ -5,3 +5,7 @@ export const libraryItemsQuerySchema = z.object({
     limit: z.coerce.number().int().min(1).max(60).default(24),
     category: z.string().trim().min(1).max(100).optional(),
 });
+
+export const signedLibraryAssetParamsSchema = z.object({
+    token: z.string().trim().min(1, "token is required"),
+});

@@ -18,29 +18,60 @@ const LIBRARY_COLUMNS = [
     "updated_at",
 ] as const;
 
-export async function getActiveLibraryItems(): Promise<LibraryItem[]> {
-    return db<LibraryItem>(LIBRARY_TABLE)
+function applyPlanAccessFilter(
+    query: { whereRaw: (sql: string, bindings?: unknown[]) => unknown },
+    accessiblePlanIds?: number[],
+): void {
+    if (accessiblePlanIds === undefined) return;
+    if (accessiblePlanIds.length === 0) {
+        query.whereRaw("false");
+        return;
+    }
+
+    query.whereRaw(`plan_ids && ARRAY[${accessiblePlanIds.map(() => "?").join(",")}]::integer[]`, accessiblePlanIds);
+}
+
+export async function getActiveLibraryItems(accessiblePlanIds?: number[]): Promise<LibraryItem[]> {
+    const query = db<LibraryItem>(LIBRARY_TABLE)
         .select([...LIBRARY_COLUMNS])
         .where({ is_active: true })
         .orderBy("sort_order", "asc")
         .orderBy("id", "asc");
+
+    applyPlanAccessFilter(query, accessiblePlanIds);
+
+    return query;
 }
 
-export async function getLibraryCategories(): Promise<Array<{ category: string; item_count: string }>> {
-    return db(LIBRARY_TABLE)
+export async function getLibraryItemById(id: number): Promise<LibraryItem | undefined> {
+    return db<LibraryItem>(LIBRARY_TABLE)
+        .select([...LIBRARY_COLUMNS])
+        .where({ id, is_active: true })
+        .first();
+}
+
+export async function getLibraryCategories(accessiblePlanIds?: number[]): Promise<Array<{ category: string; item_count: string }>> {
+    const query = db(LIBRARY_TABLE)
         .select("category")
         .count<{ category: string; item_count: string }[]>("id as item_count")
         .where({ is_active: true })
         .groupBy("category")
         .orderByRaw("MIN(sort_order) ASC");
+
+    applyPlanAccessFilter(query, accessiblePlanIds);
+
+    return query;
 }
 
 export async function getPaginatedLibraryItems(
     page: number,
     limit: number,
     category?: string,
+    accessiblePlanIds?: number[],
 ): Promise<{ items: LibraryItem[]; total: number }> {
     const baseQuery = db<LibraryItem>(LIBRARY_TABLE).where({ is_active: true });
+
+    applyPlanAccessFilter(baseQuery, accessiblePlanIds);
 
     if (category) {
         baseQuery.andWhere({ category });

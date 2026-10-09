@@ -1,5 +1,5 @@
 {
-  "name": "future-work-backend",
+  "name": "bussiness-growth-backend",
   "version": "1.0.0",
   "description": "Reusable Node.js + TypeScript + Express backend",
   "main": "dist/server.js",

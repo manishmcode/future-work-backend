@@ -47,11 +47,11 @@ function getTenantReferenceSessionToken(payload: Record<string, unknown>): strin
         (txBlock?.tenant_reference_id as string | undefined) ??
         (payload.tenant_reference_id as string | undefined);
 
-    if (!tenantRef || !tenantRef.startsWith("future-work-")) {
+    if (!tenantRef || !tenantRef.startsWith("bussiness-growth-")) {
         return null;
     }
 
-    // format: future-work-<userId>-<sessionToken>
+    // format: bussiness-growth-<userId>-<sessionToken>
     const parts = tenantRef.split("-");
     if (parts.length < 3) {
         return null;

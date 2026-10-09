@@ -1,9 +1,15 @@
 import { readFile } from "node:fs/promises";
+import { createHash } from "node:crypto";
 import path from "node:path";
+import jwt, { JwtPayload } from "jsonwebtoken";
 import { AppError } from "../../common/errors/app-error";
+import { env } from "../../config/env";
+import { getPlans } from "../plans/plans.repository";
+import { findUserById } from "../user/user.repository";
 import {
     getActiveLibraryItems,
     getLibraryCategories,
+    getLibraryItemById,
     getPaginatedLibraryItems,
     upsertLibraryItems,
 } from "./library.repository";
@@ -16,8 +22,147 @@ import {
     PaginatedLibraryResult,
 } from "./library.types";
 
-export async function fetchLibraryRows(): Promise<LibraryCourseRow[]> {
-    const items = await getActiveLibraryItems();
+type LibraryAssetKind = "image" | "content";
+
+export interface AuthorizedLibraryAsset {
+    filePath: string;
+    sourceUrl: string;
+    contentType: string;
+}
+
+interface LibraryAssetTokenPayload extends JwtPayload {
+    purpose: "library_asset";
+    item_id: number;
+    kind: LibraryAssetKind;
+    session_hash: string;
+}
+
+function getAssetTokenSecret(): string {
+    return env.LIBRARY_ASSET_TOKEN_SECRET ?? env.JWT_SECRET;
+}
+
+function hashSessionToken(authToken: string): string {
+    return createHash("sha256").update(authToken).digest("base64url");
+}
+
+function getAuthTokenExpiresAt(authToken: string): number | null {
+    const decoded = jwt.decode(authToken);
+    if (!decoded || typeof decoded === "string" || typeof decoded.exp !== "number") return null;
+    return decoded.exp;
+}
+
+function libraryAssetUrl(
+    itemId: number,
+    kind: LibraryAssetKind,
+    userId: number,
+    authToken: string,
+): string {
+    const now = Math.floor(Date.now() / 1000);
+    const authExpiresAt = getAuthTokenExpiresAt(authToken);
+    const ttlSeconds = authExpiresAt
+        ? Math.min(env.LIBRARY_ASSET_TOKEN_TTL_SECONDS, Math.max(authExpiresAt - now, 0))
+        : env.LIBRARY_ASSET_TOKEN_TTL_SECONDS;
+
+    if (ttlSeconds <= 0) throw new AppError("JWT expired", 401);
+
+    const token = jwt.sign(
+        {
+            purpose: "library_asset",
+            item_id: itemId,
+            kind,
+            session_hash: hashSessionToken(authToken),
+        },
+        getAssetTokenSecret(),
+        {
+            subject: String(userId),
+            expiresIn: ttlSeconds,
+        },
+    );
+
+    return `/v/${token}`;
+}
+
+function contentTypeFromPath(filePathOrUrl: string): string {
+    const pathname = (() => {
+        try {
+            return new URL(filePathOrUrl).pathname;
+        } catch {
+            return filePathOrUrl;
+        }
+    })().toLowerCase();
+
+    if (pathname.endsWith(".webp")) return "image/webp";
+    if (pathname.endsWith(".jpg") || pathname.endsWith(".jpeg")) return "image/jpeg";
+    if (pathname.endsWith(".png")) return "image/png";
+    if (pathname.endsWith(".gif")) return "image/gif";
+    if (pathname.endsWith(".svg")) return "image/svg+xml";
+    if (pathname.endsWith(".mp4")) return "video/mp4";
+    if (pathname.endsWith(".webm")) return "video/webm";
+    if (pathname.endsWith(".ogg")) return "video/ogg";
+    if (pathname.endsWith(".pdf")) return "application/pdf";
+    return "application/octet-stream";
+}
+
+function localAssetPathFromPublicUrl(publicUrl: string): string {
+    if (!env.LIBRARY_ASSETS_ROOT) {
+        throw new AppError("LIBRARY_ASSETS_ROOT is not configured", 500);
+    }
+
+    let pathname: string;
+    try {
+        pathname = new URL(publicUrl).pathname;
+    } catch {
+        pathname = publicUrl;
+    }
+
+    const normalizedPathname = pathname.replace(/\\/g, "/");
+    const assetsPrefix = "/assets/";
+    const assetsIndex = normalizedPathname.indexOf(assetsPrefix);
+
+    if (assetsIndex === -1) {
+        throw new AppError("Library asset URL must point to the assets directory", 500);
+    }
+
+    const relativeAssetPath = decodeURIComponent(normalizedPathname.slice(assetsIndex + assetsPrefix.length));
+    const rootPath = path.resolve(env.LIBRARY_ASSETS_ROOT);
+    const filePath = path.resolve(rootPath, relativeAssetPath);
+
+    if (filePath !== rootPath && !filePath.startsWith(`${rootPath}${path.sep}`)) {
+        throw new AppError("Invalid library asset path", 400);
+    }
+
+    return filePath;
+}
+
+async function getAccessiblePlanIds(userId: number, isAdmin: boolean): Promise<number[] | undefined> {
+    if (isAdmin) return undefined;
+
+    const user = await findUserById(userId);
+    if (!user) throw new AppError("User not found", 404);
+    if (user.plan_id === null) return [];
+
+    const plans = await getPlans();
+    const currentPlan = plans.find((plan) => plan.id === user.plan_id);
+    if (!currentPlan) return [];
+
+    const currentPrice = Number(currentPlan.price);
+    return plans
+        .filter((plan) => plan.is_active && Number(plan.price) <= currentPrice)
+        .map((plan) => plan.id);
+}
+
+async function ensureUserCanAccessLibraryItem(userId: number, isAdmin: boolean, itemPlanIds: number[]): Promise<void> {
+    if (isAdmin) return;
+
+    const accessiblePlanIds = await getAccessiblePlanIds(userId, isAdmin) ?? [];
+    if (accessiblePlanIds.length === 0 || !itemPlanIds.some((planId) => accessiblePlanIds.includes(planId))) {
+        throw new AppError("Your subscription plan does not include this library item", 403);
+    }
+}
+
+export async function fetchLibraryRows(userId: number, isAdmin: boolean, authToken: string): Promise<LibraryCourseRow[]> {
+    const accessiblePlanIds = await getAccessiblePlanIds(userId, isAdmin);
+    const items = await getActiveLibraryItems(accessiblePlanIds);
     const rowsByCategory = new Map<string, LibraryCourseRow>();
 
     for (const item of items) {
@@ -32,8 +177,9 @@ export async function fetchLibraryRows(): Promise<LibraryCourseRow[]> {
 
         rowsByCategory.get(item.category)?.cards.push({
             title: item.title,
-            image: item.thumbnail_url ?? "",
-            link: item.content_url,
+            image: item.thumbnail_url ? libraryAssetUrl(item.id, "image", userId, authToken) : "",
+            link: libraryAssetUrl(item.id, "content", userId, authToken),
+            type: item.type,
             plan_ids: item.plan_ids,
         });
     }
@@ -41,8 +187,9 @@ export async function fetchLibraryRows(): Promise<LibraryCourseRow[]> {
     return Array.from(rowsByCategory.values());
 }
 
-export async function fetchLibraryCategories(): Promise<LibraryCategorySummary[]> {
-    const categories = await getLibraryCategories();
+export async function fetchLibraryCategories(userId: number, isAdmin: boolean): Promise<LibraryCategorySummary[]> {
+    const accessiblePlanIds = await getAccessiblePlanIds(userId, isAdmin);
+    const categories = await getLibraryCategories(accessiblePlanIds);
     return categories.map((category) => ({
         title: category.category,
         item_count: Number(category.item_count),
@@ -50,18 +197,23 @@ export async function fetchLibraryCategories(): Promise<LibraryCategorySummary[]
 }
 
 export async function fetchPaginatedLibraryItems(
+    userId: number,
+    isAdmin: boolean,
+    authToken: string,
     page: number,
     limit: number,
     category?: string,
 ): Promise<PaginatedLibraryResult> {
-    const result = await getPaginatedLibraryItems(page, limit, category);
+    const accessiblePlanIds = await getAccessiblePlanIds(userId, isAdmin);
+    const result = await getPaginatedLibraryItems(page, limit, category, accessiblePlanIds);
     const totalPages = Math.ceil(result.total / limit);
 
     return {
         items: result.items.map((item) => ({
             title: item.title,
-            image: item.thumbnail_url ?? "",
-            link: item.content_url,
+            image: item.thumbnail_url ? libraryAssetUrl(item.id, "image", userId, authToken) : "",
+            link: libraryAssetUrl(item.id, "content", userId, authToken),
+            type: item.type,
             plan_ids: item.plan_ids,
             category: item.category,
         })),
@@ -72,6 +224,61 @@ export async function fetchPaginatedLibraryItems(
             total_pages: totalPages,
             has_more: page < totalPages,
         },
+    };
+}
+
+export function resolveSignedLibraryAssetToken(
+    token: string,
+    userId: number,
+    authToken: string,
+): { itemId: number; kind: LibraryAssetKind } {
+    let decoded: string | JwtPayload;
+
+    try {
+        decoded = jwt.verify(token, getAssetTokenSecret());
+    } catch (error) {
+        if (error instanceof jwt.TokenExpiredError) throw new AppError("Asset URL has expired", 401);
+        throw new AppError("Invalid asset URL", 401);
+    }
+
+    const payload = decoded as Partial<LibraryAssetTokenPayload>;
+    if (
+        typeof decoded === "string" ||
+        payload.purpose !== "library_asset" ||
+        Number(payload.sub) !== userId ||
+        typeof payload.item_id !== "number" ||
+        !Number.isInteger(payload.item_id) ||
+        payload.item_id <= 0 ||
+        (payload.kind !== "image" && payload.kind !== "content") ||
+        payload.session_hash !== hashSessionToken(authToken)
+    ) {
+        throw new AppError("Invalid asset URL", 401);
+    }
+
+    return {
+        itemId: payload.item_id,
+        kind: payload.kind,
+    };
+}
+
+export async function getAuthorizedLibraryAsset(
+    userId: number,
+    isAdmin: boolean,
+    itemId: number,
+    kind: LibraryAssetKind,
+): Promise<AuthorizedLibraryAsset> {
+    const item = await getLibraryItemById(itemId);
+    if (!item) throw new AppError("Library item not found", 404);
+
+    await ensureUserCanAccessLibraryItem(userId, isAdmin, item.plan_ids);
+
+    const sourceUrl = kind === "image" ? item.thumbnail_url : item.content_url;
+    if (!sourceUrl) throw new AppError("Library asset not found", 404);
+
+    return {
+        filePath: localAssetPathFromPublicUrl(sourceUrl),
+        sourceUrl,
+        contentType: contentTypeFromPath(sourceUrl),
     };
 }
 
