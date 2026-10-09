@@ -436,7 +436,7 @@ export async function submitPaymentForSession(
     const result = await submitCatalystPayment(payload.session_token, {
         iban,
         ibanHolderName: payload.iban_holder_name.trim(),
-        tenantReferenceId: `bussiness-growth-${userId}-${payload.session_token}`,
+        tenantReferenceId: `future-work-${userId}-${payload.session_token}`,
     });
     console.log(result, "[subscription.submitPayment] Catalyst payment submission result");
 
@@ -596,7 +596,7 @@ export async function unsubscribePlan(payload: UnsubscribePayload): Promise<Unsu
     const message = typeof payload.message === "string" && payload.message.trim().length > 0
         ? payload.message.trim()
         : null;
-    const supportEmail = env.SUPPORT_EMAIL ?? "support@bussiness-growthacademy.net";
+    const supportEmail = env.SUPPORT_EMAIL ?? "support@futureworkacademy.net";
 
     // Merge frontend-provided options with metadata
     const mergedOptions = {

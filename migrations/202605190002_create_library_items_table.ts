@@ -1,7 +1,7 @@
 import type { Knex } from "knex";
 
 const TABLE_NAME = "library_items";
-const FILE_UPLOAD_URL = "https://future-workacademy.net/assets";
+const FILE_UPLOAD_URL = "https://futureworkacademy.net/assets";
 
 type CourseCard = {
     title: string;

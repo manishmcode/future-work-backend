@@ -22,7 +22,7 @@ app.use("/future-work-api/status-change", express.raw({ type: "application/json"
 app.use(express.json());
 
 app.get("/", (_req, res) => {
-    sendSuccess(res, "API is running", { service: "bussiness-growth-backend" });
+    sendSuccess(res, "API is running", { service: "future-work-backend" });
 });
 
 app.get(

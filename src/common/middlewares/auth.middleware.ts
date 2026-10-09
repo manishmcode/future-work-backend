@@ -32,7 +32,9 @@ function getCookieValue(cookieHeader: string | undefined, name: string): string 
 
 export function authMiddleware(req: AuthRequest, res: Response, next: NextFunction): Response | void {
     const authHeader = req.headers.authorization;
-    const cookieToken = getCookieValue(req.headers.cookie, "bgp_auth_token");
+    const cookieToken =
+        getCookieValue(req.headers.cookie, "futurework_auth_token") ??
+        getCookieValue(req.headers.cookie, "bgp_auth_token");
 
     if ((!authHeader || !authHeader.startsWith("Bearer ")) && !cookieToken) {
         return sendError(res, "Authorization token is missing", 401);

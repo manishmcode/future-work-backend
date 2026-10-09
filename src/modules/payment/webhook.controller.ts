@@ -47,17 +47,17 @@ function getTenantReferenceSessionToken(payload: Record<string, unknown>): strin
         (txBlock?.tenant_reference_id as string | undefined) ??
         (payload.tenant_reference_id as string | undefined);
 
-    if (!tenantRef || !tenantRef.startsWith("bussiness-growth-")) {
+    if (!tenantRef || !tenantRef.startsWith("future-work-")) {
         return null;
     }
 
-    // format: bussiness-growth-<userId>-<sessionToken>
+    // format: future-work-<userId>-<sessionToken>
     const parts = tenantRef.split("-");
-    if (parts.length < 3) {
+    if (parts.length < 4) {
         return null;
     }
 
-    return parts.slice(2).join("-") || null;
+    return parts.slice(3).join("-") || null;
 }
 
 function getStringValue(payload: Record<string, unknown>, keys: string[]): string | null {
