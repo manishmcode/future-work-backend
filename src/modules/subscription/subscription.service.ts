@@ -596,7 +596,7 @@ export async function unsubscribePlan(payload: UnsubscribePayload): Promise<Unsu
     const message = typeof payload.message === "string" && payload.message.trim().length > 0
         ? payload.message.trim()
         : null;
-    const supportEmail = env.SUPPORT_EMAIL ?? "support@futureworkacademy.net";
+    const supportEmail = env.SUPPORT_EMAIL ?? "support@futureworkacademy.netacademy.net";
 
     // Merge frontend-provided options with metadata
     const mergedOptions = {
