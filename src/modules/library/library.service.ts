@@ -176,6 +176,7 @@ export async function fetchLibraryRows(userId: number, isAdmin: boolean, authTok
         }
 
         rowsByCategory.get(item.category)?.cards.push({
+            duration_seconds: item.duration_seconds,
             title: item.title,
             image: item.thumbnail_url ? libraryAssetUrl(item.id, "image", userId, authToken) : "",
             link: libraryAssetUrl(item.id, "content", userId, authToken),
@@ -203,13 +204,15 @@ export async function fetchPaginatedLibraryItems(
     page: number,
     limit: number,
     category?: string,
+    search?: string,
 ): Promise<PaginatedLibraryResult> {
     const accessiblePlanIds = await getAccessiblePlanIds(userId, isAdmin);
-    const result = await getPaginatedLibraryItems(page, limit, category, accessiblePlanIds);
+    const result = await getPaginatedLibraryItems(page, limit, category, accessiblePlanIds, search);
     const totalPages = Math.ceil(result.total / limit);
 
     return {
         items: result.items.map((item) => ({
+            duration_seconds: item.duration_seconds,
             title: item.title,
             image: item.thumbnail_url ? libraryAssetUrl(item.id, "image", userId, authToken) : "",
             link: libraryAssetUrl(item.id, "content", userId, authToken),
@@ -323,6 +326,8 @@ function parseEbookFile(value: unknown): LibraryItemImportPayload[] {
             seenUrls.add(item.content_url);
 
             rows.push({
+                duration_seconds: typeof item.duration_seconds === "number" && Number.isFinite(item.duration_seconds) && item.duration_seconds >= 0
+                    ? item.duration_seconds : null,
                 plan_ids: Array.isArray(item.plan_ids ?? item.plan_id)
                     ? (item.plan_ids ?? item.plan_id ?? []).filter((id): id is number => Number.isInteger(id) && id > 0)
                     : [],

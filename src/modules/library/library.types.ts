@@ -9,11 +9,13 @@ export interface LibraryItem {
     content_url: string;
     is_active: boolean;
     sort_order: number;
+    duration_seconds: number | null;
     created_at: Date;
     updated_at: Date;
 }
 
 export interface LibraryCourseCard {
+    duration_seconds: number | null;
     title: string;
     image: string;
     link: string;
@@ -27,6 +29,7 @@ export interface LibraryCourseRow {
 }
 
 export interface EbookJsonItem {
+    duration_seconds?: number | null;
     title?: string;
     type: string;
     category: string;
@@ -39,6 +42,7 @@ export interface EbookJsonItem {
 }
 
 export interface LibraryItemImportPayload {
+    duration_seconds: number | null;
     plan_ids: number[];
     title: string;
     description: null;

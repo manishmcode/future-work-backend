@@ -93,6 +93,7 @@ export async function getPaginatedLibraryItemsController(
             parsed.data.page,
             parsed.data.limit,
             parsed.data.category,
+            parsed.data.search,
         );
 
         console.log("[library.items] Paginated items retrieved", {

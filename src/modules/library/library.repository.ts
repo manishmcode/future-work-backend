@@ -14,6 +14,7 @@ const LIBRARY_COLUMNS = [
     "content_url",
     "is_active",
     "sort_order",
+    "duration_seconds",
     "created_at",
     "updated_at",
 ] as const;
@@ -68,6 +69,7 @@ export async function getPaginatedLibraryItems(
     limit: number,
     category?: string,
     accessiblePlanIds?: number[],
+    search?: string,
 ): Promise<{ items: LibraryItem[]; total: number }> {
     const baseQuery = db<LibraryItem>(LIBRARY_TABLE).where({ is_active: true });
 
@@ -77,12 +79,16 @@ export async function getPaginatedLibraryItems(
         baseQuery.andWhere({ category });
     }
 
+    if (search) {
+        baseQuery.whereILike("title", `%${search.replace(/[\\%_]/g, "\\$&")}%`);
+    }
+
+    const orderedQuery = baseQuery.clone().select([...LIBRARY_COLUMNS]);
+    if (!category) orderedQuery.orderBy("duration_seconds", "desc", "last");
+    orderedQuery.orderBy("sort_order", "asc").orderBy("id", "asc");
+
     const [items, countRow] = await Promise.all([
-        baseQuery
-            .clone()
-            .select([...LIBRARY_COLUMNS])
-            .orderBy("sort_order", "asc")
-            .orderBy("id", "asc")
+        orderedQuery
             .limit(limit)
             .offset((page - 1) * limit),
         baseQuery.clone().count<{ count: string }>("id as count").first(),
