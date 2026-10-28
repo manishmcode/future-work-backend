@@ -3,6 +3,17 @@ import { LibraryImportResult, LibraryItem, LibraryItemImportPayload } from "./li
 
 const LIBRARY_TABLE = "library_items";
 
+// Normalize spacing and capitalization without changing stored category names.
+const CATEGORY_PRIORITIES: Array<[string, number]> = [
+    ["Boost Your Google and YouTube Rankings with SEO", 0],
+    // Keep the previous SEO title in the same position until all environments are renamed.
+    ["Best Google and YouTube Organic Search Engine Optimization or SEO Strategies!", 0],
+    ["The Organized Life", 1],
+    ["Smart Time Launchpad", 2],
+    ["Zoom Meeting Masterclass", 3],
+    ["Productivity Mastery", 4],
+];
+
 const LIBRARY_COLUMNS = [
     "id",
     "plan_ids",
@@ -57,6 +68,10 @@ export async function getLibraryCategories(accessiblePlanIds?: number[]): Promis
         .count<{ category: string; item_count: string }[]>("id as item_count")
         .where({ is_active: true })
         .groupBy("category")
+        .orderByRaw(
+            `CASE regexp_replace(lower(category), '[^a-z0-9]', '', 'g') ${CATEGORY_PRIORITIES.map(() => "WHEN ? THEN ?").join(" ")} ELSE 5 END ASC`,
+            CATEGORY_PRIORITIES.flatMap(([name, priority]) => [name.toLowerCase().replace(/[^a-z0-9]/g, ""), priority]),
+        )
         .orderByRaw("MIN(sort_order) ASC");
 
     applyPlanAccessFilter(query, accessiblePlanIds);

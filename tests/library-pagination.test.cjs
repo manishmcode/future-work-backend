@@ -69,3 +69,20 @@ test('a user with no accessible plans cannot retrieve items or counts', async ()
     await api.getPaginatedLibraryItems(1, 10, undefined, []);
     for (const query of queries) assert.match(query.sql, /and false/);
 });
+
+test('category navigation prioritizes the requested five collections then uses the existing order', async () => {
+    const { api, queries } = repository();
+    await api.getLibraryCategories([1]);
+    const query = queries[0];
+    assert.match(query.sql, /group by "category" order by CASE regexp_replace\(lower\(category\), '\[\^a-z0-9\]', '', 'g'\)/);
+    assert.match(query.sql, /ELSE 5 END ASC, MIN\(sort_order\) ASC$/);
+    assert.deepEqual(query.bindings.slice(-12), [
+        'boostyourgoogleandyoutuberankingswithseo', 0,
+        'bestgoogleandyoutubeorganicsearchengineoptimizationorseostrategies', 0,
+        'theorganizedlife', 1,
+        'smarttimelaunchpad', 2,
+        'zoommeetingmasterclass', 3,
+        'productivitymastery', 4,
+    ]);
+    assert.match(query.sql, /plan_ids && ARRAY\[\?\]::integer\[\]/);
+});
