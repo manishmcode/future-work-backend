@@ -5,14 +5,21 @@ const LIBRARY_TABLE = "library_items";
 
 // Normalize spacing and capitalization without changing stored category names.
 const CATEGORY_PRIORITIES: Array<[string, number]> = [
-    ["Boost Your Google and YouTube Rankings with SEO", 0],
+    ["AI Assistants for Everyday Work", -1],
+    ["Automate Repetitive Work", 0],
+    ["Boost Your Google and YouTube Rankings with SEO", 1],
     // Keep the previous SEO title in the same position until all environments are renamed.
-    ["Best Google and YouTube Organic Search Engine Optimization or SEO Strategies!", 0],
-    ["The Organized Life", 1],
-    ["Smart Time Launchpad", 2],
-    ["Zoom Meeting Masterclass", 3],
-    ["Productivity Mastery", 4],
+    ["Best Google and YouTube Organic Search Engine Optimization or SEO Strategies!", 1],
+    ["The Organized Life", 2],
+    ["Smart Time Launchpad", 3],
+    ["Zoom Meeting Masterclass", 4],
+    ["Productivity Mastery", 5],
 ];
+
+const FEATURED_LIBRARY_CATEGORIES = [
+    "AI Assistants for Everyday Work",
+    "Automate Repetitive Work",
+].map((name) => name.toLowerCase().replace(/[^a-z0-9]/g, ""));
 
 const LIBRARY_COLUMNS = [
     "id",
@@ -69,7 +76,7 @@ export async function getLibraryCategories(accessiblePlanIds?: number[]): Promis
         .where({ is_active: true })
         .groupBy("category")
         .orderByRaw(
-            `CASE regexp_replace(lower(category), '[^a-z0-9]', '', 'g') ${CATEGORY_PRIORITIES.map(() => "WHEN ? THEN ?").join(" ")} ELSE 5 END ASC`,
+            `CASE regexp_replace(lower(category), '[^a-z0-9]', '', 'g') ${CATEGORY_PRIORITIES.map(() => "WHEN ? THEN ?").join(" ")} ELSE 6 END ASC`,
             CATEGORY_PRIORITIES.flatMap(([name, priority]) => [name.toLowerCase().replace(/[^a-z0-9]/g, ""), priority]),
         )
         .orderByRaw("MIN(sort_order) ASC");
@@ -99,7 +106,19 @@ export async function getPaginatedLibraryItems(
     }
 
     const orderedQuery = baseQuery.clone().select([...LIBRARY_COLUMNS]);
-    if (!category) orderedQuery.orderBy("duration_seconds", "desc", "last");
+    if (!category) {
+        const normalizedCategory = "regexp_replace(lower(category), '[^a-z0-9]', '', 'g')";
+        orderedQuery
+            .orderByRaw(
+                `CASE ${normalizedCategory} WHEN ? THEN 0 WHEN ? THEN 1 ELSE 2 END ASC`,
+                FEATURED_LIBRARY_CATEGORIES,
+            )
+            .orderByRaw(
+                `CASE WHEN ${normalizedCategory} IN (?, ?) THEN sort_order END ASC`,
+                FEATURED_LIBRARY_CATEGORIES,
+            )
+            .orderBy("duration_seconds", "desc", "last");
+    }
     orderedQuery.orderBy("sort_order", "asc").orderBy("id", "asc");
 
     const [items, countRow] = await Promise.all([
